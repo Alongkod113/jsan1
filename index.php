@@ -21,11 +21,24 @@
     </table>
 </div>
 <div id="detail">
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>UserID</th>
+            </tr>
+        </thead>
+        <tbody id="tblDetails">
+        </tbody>
+    </table>
+</div>
+
+<div id="detail">
     
       <br>  "postId": 1,</br>
-      <br>  "id": 1,</br>
+      <br>  "id": 63112379,</br>
       <br>  "name": "id labore ex et quam laborum",</br>
-      <br> "email": "Eliseo@gardner.biz",</br>
       <br> "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium"</br>
       
 </div>
@@ -64,12 +77,39 @@
             })
             .fail((xhr, status, error)=>{
             })
+
+            function showDetails(id) {
+        $("#main").hide();
+        $("#detail").show();
+
+        // console.log(id);
+        var url = "https://jsonplaceholder.typicode.com/posts/" + id
+
+        $.getJSON(url)
+            .done((data) => {
+                console.log(data);
+                var line = "<tr id='detailROW'";
+                    line += "><td>" + data.id + "</td>"
+                    line += "<td><b>" + data.title + "</b><br/>"
+                    line += data.body + "</td>"
+                    line += "<td>" + data.userId + "</td>"
+                    line += "</tr>";
+                    $("#tblDetails").append(line);
+            })
+            .fail((xhr, err, status) => {
+
+            })
+
     }
-    $(()=>{
-        loadPosts();
-        $("#btnBack").click(()=>{
+    $(() => {
+        LoadPosts();
+        $("#detail").hide();
+        $("#btnBack").click(() => {
             $("#main").show();
+            $("#detail").hide();
+            $("#detailROW").remove();
         });
     })
 </script>
+
 </html>
