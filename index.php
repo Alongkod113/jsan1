@@ -38,7 +38,7 @@
     function showDetails(id){
         $("#main").hide();
         $("#detail").show();
-        // 
+        // console.log(id);
         var url = "https://jsonplaceholder.typicode.com/posts/"+id;
         $.getJSON(url)
             .done((data)=>{
@@ -48,7 +48,6 @@
                     line += "<td><b>" + data.title + "</b><br/>"
                     line += data.body + "</td>"
                     line += "<td>" + data.userId + "</td>"
-                    line += "<td> <button onClick='showDetails("+ item.id +");' > link </button> </td>";
                     line += "</tr>";
                     $("#tblDetails").append(line);
             })
@@ -64,7 +63,7 @@
         $.getJSON(url)
             .done((data)=>{
                 $.each(data, (k, item)=>{
-                    //
+                    //console.log(item);
                     console.log(item);
                     var line = "<tr>";
                         line += "<td>"+ item.id + "</td>";
