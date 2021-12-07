@@ -8,7 +8,7 @@
     <title>Alongkod</title>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
-<head>
+</head>
 <body>
     <button id="btnJSON1"> JSON 1</button>
     Name : <span id="fname"></span> <br/>
@@ -16,15 +16,16 @@
 </body>
 <script>
 function loadJSON(){
-    var url = "https://cj-android-demon.herokuapp.com/json1.php"
+    var url = "https://cj-android-demon.herokuapp.com/json2.php"
 
     $.getJSON(ul)
         .done((data)=>{
             console.log(data);
-            $("#fname").text(data.fname);
+            console.log(data [1]);
+            console.log(data [2].fname);
+        //   $("#fname").text(data.fname);
         })
         .fail((xhr, status , err)=>{
-
         });
 
 }
