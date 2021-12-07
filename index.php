@@ -20,25 +20,17 @@
         </tbody>
     </table>
 </div>
+
 <div id="detail">
     <table>
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Title</th>
-                <th>UserID</th>
+                <th>ID</th><th>Title</th><th>Userid</th>
             </tr>
         </thead>
         <tbody id="tblDetails">
         </tbody>
     </table>
-</div>
-      <br>  "postId": 1,</br>
-      <br>  "id": 1,</br>
-      <br>  "name": "id labore ex et quam laborum",</br>
-      <br> "email": "Eliseo@gardner.biz",</br>
-      <br> "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium"</br>
-      
 </div>
     
 </body>
@@ -46,7 +38,7 @@
     function showDetails(id){
         $("#main").hide();
         $("#detail").show();
-        // console.log(id);
+        // 
         var url = "https://jsonplaceholder.typicode.com/posts/"+id;
         $.getJSON(url)
             .done((data)=>{
@@ -71,7 +63,7 @@
         $.getJSON(url)
             .done((data)=>{
                 $.each(data, (k, item)=>{
-                    // console.log(item);
+                    //
                     console.log(item);
                     var line = "<tr>";
                         line += "<td>"+ item.id + "</td>";
