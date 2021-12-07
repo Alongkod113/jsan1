@@ -12,7 +12,7 @@
 </head>
 <body>
 <button id="btnBack"> back </button>
-<div id="main">
+<div id="um">
     <table>
         <thead>
             <tr>
@@ -26,13 +26,14 @@
 
 <div id="detail">
     sssssss
-  
+
+</div>
 
 </body>
 
 <script>
     function showDetails(id){
-        $("#main").hide();
+        $("#um").hide();
         $("#detail").show();
         var url = "https://jsonplaceholder.typicode.com/posts/"+id;
         $.getJSON(url)
@@ -45,7 +46,7 @@
             })
     }
     function loadPosts(){
-        $("#main").show();
+        $("#um").show();
         $("#details").hide();
         
         var url = "https://jsonplaceholder.typicode.com/posts";
@@ -59,10 +60,11 @@
                         line += item.body + "</td>";
                         line += "<td> <button onClick='showDetails("+ item.id +");' > link </button> </td>";
                         line += "<td> <button onClick='showDetails("+ item.id +");' > back </button> </td>";
+
                         line += "</tr>";
                     $("#tblPosts").append(line);
                 });
-                $("#main").show();
+                $("#um").show();
             })
             .fail((xhr, status, error)=>{
 
@@ -73,15 +75,11 @@
 
         loadPosts();
         $("#btnBack").click(()=>{
-            $("#main").show();
+            $("#um").show();
         });
     })
 
 </script>
-
-
-
-
 
 
 </html>
