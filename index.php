@@ -56,14 +56,12 @@
     }
 
     function loadPosts(){
-        $("#main").show();
-        $("#details").hide();
-        
         var url = "https://jsonplaceholder.typicode.com/posts";
+        
         $.getJSON(url)
             .done((data)=>{
                 $.each(data, (k, item)=>{
-                    //console.log(item);
+                    // console.log(item);
                     console.log(item);
                     var line = "<tr>";
                         line += "<td>"+ item.id + "</td>";
