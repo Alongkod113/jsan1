@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,22 +12,23 @@
 <body>
     <button id="btnJSON1"> JSON 1</button>
     Name : <span id="fname"></span> <br/>
-    Sname : <span id="lname"></span>
+    Sname : <span id="lname"></span> 
+</body>
 </body>
 <script>
 function loadJSON(){
     var url = "https://cj-android-demon.herokuapp.com/json1.php"
-    $.get(url,(data, status)=>{
-        console.log(data);
-        var jData = JSON.parse(data);
-        console.log(jData.fname);
-        console.log(jData.lname);
-        $("#name").text(jData.fname);
-    ));
 
-            
+    $.getJSON(ul)
+        .done((data)=>{
+            console.log(data);
+            $("#fname").text(data.fname);
+        })
+        .fail((xhr, status , err)=>{
+
+        });
+
 }
-
 $(()=>{
     $("#btnTSON1").click(loadJSON);
 
