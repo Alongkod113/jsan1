@@ -16,9 +16,7 @@
         <table>
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Title</th>
-                    <th> Details </th>
+                    <th>ID</th> <th>Title</th><th> Details </th>
                 </tr>
             </thead>
             <tbody id="tblPosts">
@@ -30,9 +28,7 @@
         <table>
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Title</th>
-                    <th>Userid</th>
+                    <th>ID</th><th>Title</th><th>Userid</th>
                 </tr>
             </thead>
             <tbody id="tblDetails">
@@ -42,6 +38,7 @@
 
 </body>
 <script>
+    function refresh() {}
     function showDetails(id) {
         $("#main").hide();
         $("#detail").show();
