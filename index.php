@@ -14,7 +14,6 @@
     Name : <span id="fname"></span> <br/>
     Sname : <span id="lname"></span> 
 </body>
-</body>
 <script>
 function loadJSON(){
     var url = "https://cj-android-demon.herokuapp.com/json1.php"
