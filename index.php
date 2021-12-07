@@ -26,6 +26,7 @@
 
 <div id="detail">
     sssssss
+    <div id="back"></div>
 
 </div>
 
