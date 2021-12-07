@@ -24,7 +24,7 @@
         </table>
     </div>
 
-    <div id="detail">
+    <div id="Detail">
         <table>
             <thead>
                 <tr>
@@ -38,10 +38,9 @@
 
 </body>
 <script>
-    function refresh() {}
     function showDetails(id) {
         $("#main").hide();
-        $("#detail").show();
+        $("#Detail").show();
         // console.log(id);
         var url = "https://jsonplaceholder.typicode.com/posts/" + id;
         $.getJSON(url)
@@ -60,6 +59,7 @@
     }
 
     function loadPosts() {
+        $("#main").hide();
         var url = "https://jsonplaceholder.typicode.com/posts";
 
         $.getJSON(url)
@@ -81,11 +81,11 @@
     }
     $(() => {
         loadPosts();
-        $("#detail").hide();
+        $("#Detail").hide();
         $("#btnBack").click(() => {
             $("#main").show();
-            $("#detail").hide();
-            $("#detailROW").remove();
+            $("#Detail").hide();
+            $("#DetailROW").remove();
         });
     })
 </script>
