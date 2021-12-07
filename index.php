@@ -57,13 +57,13 @@
 
     function loadPosts(){
         var url = "https://jsonplaceholder.typicode.com/posts";
-        
+
         $.getJSON(url)
             .done((data)=>{
                 $.each(data, (k, item)=>{
                     // console.log(item);
                     console.log(item);
-                    var line = "<tr>";
+                    var line = "<tr id='detailROW>";
                         line += "<td>"+ item.id + "</td>";
                         line += "<td><b>"+ item.title + "</b><br/>";
                         line += item.body + "</td>";
