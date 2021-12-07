@@ -31,7 +31,7 @@
                     <th>ID</th><th>Title</th><th>Userid</th>
                 </tr>
             </thead>
-            <tbody id="tbldetails">
+            <tbody id="tblDetails">
             </tbody>
         </table>
     </div>
@@ -40,7 +40,7 @@
 <script>
     function showDetails(id) {
         $("#main").hide();
-        $("#Detail").show();
+        $("#etail").show();
         // console.log(id);
         var url = "https://jsonplaceholder.typicode.com/posts/" + id;
         $.getJSON(url)
@@ -59,7 +59,6 @@
     }
 
     function loadPosts() {
-        $("#main").hide();
         var url = "https://jsonplaceholder.typicode.com/posts";
 
         $.getJSON(url)
@@ -81,7 +80,7 @@
     }
     $(() => {
         loadPosts();
-        $("#Detail").hide();
+        $("#detail").hide();
         $("#btnBack").click(() => {
             $("#main").show();
             $("#detail").hide();
@@ -91,3 +90,4 @@
 </script>
 
 </html>
+
