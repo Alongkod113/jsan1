@@ -32,12 +32,27 @@
 
     </div>
 
+    <div id="detail">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>UserID</th>
+                </tr>
+            </thead>
+            <tbody id="tblDetails">
+            </tbody>
+        </table>
+    </div>
+
 </body>
 
 <script>
     function showDetails(id) {
         $("#main").hide();
         $("#detail").show();
+        ///
         var url = "https://jsonplaceholder.typicode.com/posts/" + id;
         $.getJSON(url)
             .done((data) => {
@@ -71,7 +86,33 @@
             .fail((xhr, status, error) => {
 
             })
+
+
     }
+
+    function LoadPosts() {
+        var url = "https://jsonplaceholder.typicode.com/posts"
+
+        $.getJSON(url)
+            .done((data) => {
+                $.each(data, (k, item) => {
+                    ///
+                    var line = "<tr>";
+                    line += "<td>" + item.id + "</td>"
+                    line += "<td><b>" + item.title + "</b><br/>"
+                    line += item.body + "</td>"
+                    line += "<td><button onClick='showDetails(" + item.id + ");'>Link</button></td>"
+                    line += "</tr>";
+                    $("#tblPost").append(line);
+                });
+                $("#main").show();
+            })
+            .fail((xhr, err, status) => {
+
+            })
+    }
+
+
 
    
     $(()=>{
@@ -79,6 +120,9 @@
                 loadPosts();
         $("#btnBack").click(()=>{
                 $("#main").show();
+                $("#detail").hide();
+                $("#detailROW").remove()
+
         });
     })
 
