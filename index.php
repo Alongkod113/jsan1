@@ -1,36 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alongkod</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
-</head>
-<body>
-    <button id="btnJSON1"> JSON 1</button>
-    Name : <span id="fname"></span> <br/>
-    Sname : <span id="lname"></span> 
+    <head>
+    <body>
+ <table>
+     <thead>
+         <tr>
+             <th>ID</th><th>First Name</th><th>Last Name</th>
+         </tr>
+     </thead>
+     <tbody id="tblStudent">
+     </tbody>
+ </table>
 </body>
 <script>
+
 function loadJSON(){
-    var url = "https://cj-android-demon.herokuapp.com/json2.php"
+ var url = "https://cj-android-demon.herokuapp.com/json2.php";
 
-    $.getJSON(ul)
-        .done((data)=>{
-            console.log(data);
-            console.log(data [1]);
-            console.log(data [2].fname);
-        //   $("#fname").text(data.fname);
-        })
-        .fail((xhr, status , err)=>{
-        });
+ $.getJSON(url)
+     .done((data)=>{
+         console.log(data);
+     })
+     .fail((xhr, status, err)=>{
 
+     });
 }
-$(()=>{
-    $("#btnTSON1").click(loadJSON);
 
+$(()=>{
+ loadJSON();
 });
-</script>
-</html>
+    </script>
