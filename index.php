@@ -31,7 +31,7 @@
                     <th>ID</th><th>Title</th><th>Userid</th>
                 </tr>
             </thead>
-            <tbody id="tblDetails">
+            <tbody id="tbldetails">
             </tbody>
         </table>
     </div>
@@ -84,8 +84,8 @@
         $("#Detail").hide();
         $("#btnBack").click(() => {
             $("#main").show();
-            $("#Detail").hide();
-            $("#DetailROW").remove();
+            $("#detail").hide();
+            $("#detailROW").remove();
         });
     })
 </script>
